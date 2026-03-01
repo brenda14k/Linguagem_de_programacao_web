@@ -97,8 +97,10 @@ $pokemons[] = new Pokemon(
                 <img src="<?= $p->getImagem(); ?>">
             </td>
             <td>
-                <span><?= $p->getDescricao(); ?></span>
-                <a href="<?= $p->getDados(); ?>">Ver mais</a>
+               <span><?= $p->getDescricao(); ?></span>
+    <a href="<?= $p->getDados(); ?>" target="_blank">
+        Ver mais
+    </a>
             </td>
         </tr>
     <?php endforeach; ?>
