@@ -1,7 +1,7 @@
 <?php
 require_once("modelo/Lugares.php");
 
-// 🔴 redireciona se não tiver palpite
+//  redireciona se não tiver palpite
 if (!isset($_GET['palpite']) || $_GET['palpite'] === '') {
     header("Location: index.php");
     exit;
@@ -45,7 +45,7 @@ function mostrarCaixa($numero, $nome, $link, $blur = false) {
 
     echo "<p class='numero'>Palpite $numero</p>";
 
-    // 👇 AQUI ACONTECE O BORRADO
+    //  AQUI ACONTECE O BORRADO
     if ($blur) {
         echo "<img class='blur' src='$link'>";
     } else {
@@ -71,7 +71,7 @@ function mostrarCaixa($numero, $nome, $link, $blur = false) {
 
 <h1 class="titulo">Resultado</h1>
 
-<!-- 🔵 MOSTRA APENAS O NÚMERO -->
+<!-- MOSTRA APENAS O NÚMERO -->
 <p class="numero">Você escolheu o palpite: <?php echo $escolha; ?></p>
 
 <?php
@@ -80,7 +80,7 @@ if ($escolha === $correto) {
 
     echo "<h2 class='acerto'>PARABÉNS! VOCÊ ACERTOU!</h2>";
 
-    // 👇 SEM BLUR
+    // SEM BLUR
     mostrarCaixa(
         $correto,
         $palpites[$correto]->getNome(),
@@ -93,7 +93,7 @@ if ($escolha === $correto) {
     echo "<h2 class='erro'>Você errou!</h2>";
     echo "<p class='texto-resultado'>O palpite correto era:</p>";
 
-    // 👇 COM BLUR
+    // COM BLUR
     mostrarCaixa(
         $correto,
         $palpites[$correto]->getNome(),
